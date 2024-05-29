@@ -4,32 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/src/output.css" rel="stylesheet">
-  <title>DoerHQ </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <title>DoerHQ</title>
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body >
+<body class="w-full h-full">
 
-  <div class=" flex align-middle justify-center w-full h-screen relative px-0 py-2">
-
-    <video autoplay loop muted plays-inline class="absolute right-0 bottom-0 -z-10">
-      <source src="/assets/2.mp4" type="video/mp4">
+  <div class="w-full h-full">
+    <div class="bg-black -z-5 absolute inset-0 bg-opacity-30 "></div>
+    <video id="background-video" autoplay loop muted playsinline class="inset-0 w-full h-full object-cover -z-10">
+      <source src="/assets/5.mp4" type="video/mp4">
     </video>
-
-    <!-- NavBar -->
-
-    <nav class="flex justify-between w-full">
-      <div>
-            <a href="#" class="text-3xl">DoerHQ</a>
-      </div>
-      <div>
-            <a href="#" class="text-2xl">Test</a>
-      </div>
-    </nav>
-
-
   </div>
 
+  <!-- NavBar -->
+  <nav class="absolute top-0 left-0 right-0 flex items-end justify-between p-4">
+    <div>
+      <a href="#" class="text-white text-5xl font-bold font-body">dOErHq</a>
+    </div>
+    <div>
+      <button class="text-white text-2xl font-body2 border px-7 py-3 rounded-2xl" onclick="ChangeVideo()">Change Mood</button>
+    </div>
+  </nav>
 
-
+  <script src="/src/script.js"></script>
 
 </body>
 </html>
