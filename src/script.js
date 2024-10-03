@@ -4,6 +4,10 @@ var TodoForm = document.querySelector('#todo-form');
 var TodoFormInput = document.querySelector('#todo-input');
 var TaskList = document.querySelector('#task-list');
 
+// Load sound files
+const taskCompleteSound = new Audio('/assets/Sound Effects/TaskComplete.mp3');
+const taskDeleteSound = new Audio('/sounds/delete.mp3');
+
 // Add Task Event Listener
 TodoForm.addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent form submission
@@ -14,12 +18,17 @@ TodoForm.addEventListener('submit', function(e) {
 
         // Create task item with a button and a task text
         let task = document.createElement('div');
-        task.classList.add('flex', 'items-center', 'justify-start', 'mb-4');
+        task.classList.add('flex', 'align-middle', 'justify-between', 'mb-4');
         
         // Add button and task text
         task.innerHTML = `
-            <button class="task-complete-button border-white w-6 h-6 border-2 rounded-full mr-4"></button>
-            <span class="task-text">${TodoInput}</span>
+        <div class="flex align-middle">
+          <button class="task-complete-button border-white w-6 h-6 border-2 rounded-full mr-4"></button>
+          <span class="task-text">${TodoInput}</span>
+        </div>
+        <button class="task-delete-button w-5 h-5 mr-4 float-right">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9ZM9 12V18H11V12H9ZM13 12V18H15V12H13Z"></path></svg>
+        </button>
         `;
 
         // Append the new task to the task list
@@ -30,6 +39,9 @@ TodoForm.addEventListener('submit', function(e) {
         let taskText = task.querySelector('.task-text');
 
         taskCompleteButton.addEventListener('click', function() {
+            // Play sound on completion
+            taskCompleteSound.play();
+            
             // Toggle the completion style (strikethrough and button style)
             if (taskCompleteButton.classList.contains('bg-white')) {
                 taskCompleteButton.classList.remove('bg-white'); // Mark as incomplete
@@ -40,7 +52,18 @@ TodoForm.addEventListener('submit', function(e) {
             }
         });
 
-        TodoFormInput.value = ''; // Clear the input after task addition
+        // Attach event listener for task deletion
+        let taskDeleteButton = task.querySelector('.task-delete-button');
+        taskDeleteButton.addEventListener('click', function() {
+            // Play sound on deletion
+            taskDeleteSound.play();
+            
+            // Remove the task from the DOM
+            task.remove();
+        });
+
+        // Clear the input after task addition
+        TodoFormInput.value = '';
     }
 });
 
