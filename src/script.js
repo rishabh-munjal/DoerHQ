@@ -1,5 +1,5 @@
 const video_itr = [1, 2, 3, 4, 5];
-let i = 0;
+let i = 1;
 var TodoForm = document.querySelector('#todo-form');
 var TodoFormInput = document.querySelector('#todo-input');
 var TaskList = document.querySelector('#task-list');
