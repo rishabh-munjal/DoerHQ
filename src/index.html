@@ -7,13 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400&display=swap" rel="stylesheet">
+
   <title>DoerHQ</title>
 </head>
-<body class="w-full h-full m-0 overflow-hidden ">
+<body class=" w-full h-full m-0 ">
 <!--Background Video-->
   <div class="w-full h-full relative">
     <video id="background-video" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-1 ">
-      <source src="/assets/1.mp4" type="video/mp4">
+      <source src="/assets/5.mp4" type="video/mp4">
     </video>
   </div>
 
@@ -23,20 +25,18 @@
       <a href="#" class="text-white text-3xl font-bold font-body">dOErHq</a>
     </div>
     <div>
-      <button class="text-white text-base font-light px-3 py-2 rounded-lg bg-black bg-opacity-50 hover:bg-opacity-70" onclick="ChangeVideo()">✨</button>
+      <!-- <button class="text-white text-base font-light px-3 py-2 rounded-lg bg-black bg-opacity-50 hover:bg-opacity-70" onclick="ChangeVideo()">✨</button> -->
+       <span id="clock" class="text-white text-2xl font-body3 font-extralight "></span>
     </div>
   </nav>
 
   <br>
 
   <!--Task Manager-->
-  <div class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between">
+  <div class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between " >
     <!-- Task List -->
-    <div id="task-list" class="flex-grow overflow-y-auto">
-
-      
+    <div id="task-list" class="flex-grow overflow-y-auto"> 
     </div>
-
     <!-- Add Task Form -->
     <div class="mt-4">
       <form id="todo-form" class="flex items-center">
@@ -45,6 +45,15 @@
       </form>
     </div>
   </div>
+
+
+  <!--PomoDoro Timer-->
+
+  <div class="relative h-[17rem] w-[40rem] translate-x-[33rem] -translate-y-[17rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl ">
+
+  </div>
+  
+
 
   <script src="/src/script.js"></script>
 

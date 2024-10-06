@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         body : ['Major Mono Display'],
-        body2 : ['Roboto']
+        body2 : ['Roboto'],
+        body3 : ['Orbitron']
       }
     },
   },
