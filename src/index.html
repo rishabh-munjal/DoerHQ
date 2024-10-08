@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400&display=swap"
+    rel="stylesheet">
 
   <title>DoerHQ</title>
 </head>
-<body class=" w-full h-full m-0 ">
-<!--Background Video-->
+
+<body class=" w-full h-full m-0 overflow-hidden ">
+  <!--Background Video-->
   <div class="w-full h-full relative">
-    <video id="background-video" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-1 ">
+    <video id="background-video" autoplay loop muted playsinline
+      class="fixed top-0 left-0 w-full h-full object-cover -z-1 ">
       <source src="/assets/5.mp4" type="video/mp4">
     </video>
   </div>
@@ -26,21 +30,24 @@
     </div>
     <div>
       <!-- <button class="text-white text-base font-light px-3 py-2 rounded-lg bg-black bg-opacity-50 hover:bg-opacity-70" onclick="ChangeVideo()">✨</button> -->
-       <span id="clock" class="text-white text-2xl font-body3 font-extralight "></span>
+      <span id="clock" class="text-white text-2xl font-body3 font-extralight "></span>
     </div>
   </nav>
 
   <br>
 
   <!--Task Manager-->
-  <div class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between " >
+  <div
+    class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between ">
     <!-- Task List -->
-    <div id="task-list" class="flex-grow overflow-y-auto"> 
+    <div id="task-list" class="flex-grow overflow-y-auto">
     </div>
     <!-- Add Task Form -->
     <div class="mt-4">
       <form id="todo-form" class="flex items-center">
-        <input type="text" id="todo-input" class="text-white flex-1 p-2  border-gray-300  mr-2 bg-transparent border-0 border-b-2 focus:outline-none" placeholder="Add a task" required>
+        <input type="text" id="todo-input"
+          class="text-white flex-1 p-2  border-gray-300  mr-2 bg-transparent border-0 border-b-2 focus:outline-none"
+          placeholder="Add a task" required>
         <button id="todo-item-add" type="submit" class=" text-white px-4 py-2 text-3xl">+</button>
       </form>
     </div>
@@ -49,13 +56,46 @@
 
   <!--PomoDoro Timer-->
 
-  <div class="relative h-[17rem] w-[40rem] translate-x-[33rem] -translate-y-[17rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl ">
+  <div
+    class="relative h-[17rem] w-[20rem] translate-x-[25rem] -translate-y-[17rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg   py-8  rounded-xl  ">
+    <form id="number-form" class="flex flex-col justify-between items-center h-full">
+      <!-- Session Length Input -->
+      <div class="flex justify-evenly w-full">
+        <div class="number-input flex flex-col items-center mb-4">
+          <label for="session-length" class="mb-4">Session Length</label>
+          <button type="button" id="session-increment" class="mb-2 w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg>
+          </button>
+          <input type="number" id="session-length" name="session-length" min="1" max="100" value="1" readonly class="mb-2  h-14  bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border border-white border-opacity-20 shadow-lg ">
+          <button type="button" id="sessions-decrement" class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></button>
+        </div>
+
+        <!-- Total Sessions Input -->
+        <div class="number-input flex flex-col items-center mb-4">
+          <label for="total-sessions" class="mb-4"> Total Sessions</label>
+          <button type="button" id="sessions-increment" class="mb-2 h-6 w-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg>
+          </button></button>
+          <input type="number" id="total-sessions" name="total-sessions" min="1" max="100" value="100" readonly
+            class="mb-2   bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border border-white border-opacity-20 shadow-lg h-14" >
+          <button type="button" id="sessions-increment" class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></button>
+        </div>
+      </div>
+      <!-- Start Button -->
+      <button type="submit" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Start</button>
+    </form>
 
   </div>
-  
+
+
+  <!--Music Player-->
+  <div
+    class="relative h-[12rem] w-[20rem] translate-x-[25rem] -translate-y-[47rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl ">
+
+  </div>
+
 
 
   <script src="/src/script.js"></script>
 
 </body>
+
 </html>
