@@ -3,6 +3,8 @@ let i = 1;
 var TodoForm = document.querySelector('#todo-form');
 var TodoFormInput = document.querySelector('#todo-input');
 var TaskList = document.querySelector('#task-list');
+var PomodoroStartButton = document.querySelector('.pomodoro-button ');
+var PomodoroForm  = document.querySelector('#number-form');
 
 // Load sound files
 const taskCompleteSound = new Audio('/assets/Sound Effects/TaskComplete.mp3');
@@ -78,10 +80,9 @@ function ChangeVideo() {
     if (i > 4) {
         i = 0;
     }
-
-
 }
-//Digital Clock
+
+// Digital Clock
 function updateClock() {
     const clock = document.getElementById('clock');
     const now = new Date();
@@ -105,5 +106,97 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Hold functionality for increment and decrement
+let sessionIncrementInterval;
+let sessionDecrementInterval;
+let totalSessionsIncrementInterval;
+let totalSessionsDecrementInterval;
+
+function clearSessionInterval() {
+    clearInterval(sessionIncrementInterval);
+    clearInterval(sessionDecrementInterval);
+}
+
+function clearTotalSessionsInterval() {
+    clearInterval(totalSessionsIncrementInterval);
+    clearInterval(totalSessionsDecrementInterval);
+}
+
+document.getElementById('session-increment').addEventListener('mousedown', function() {
+    let input = document.getElementById('session-length');
+    let value = parseInt(input.value);
+    if (value < 180) { // Changed max value to 180
+        input.value = value + 1;
+    }
+    sessionIncrementInterval = setInterval(function() {
+        value = parseInt(input.value);
+        if (value < 180) {
+            input.value = value + 1;
+        }
+    }, 100); // Increase every 200 ms
+});
+
+document.getElementById('session-decrement').addEventListener('mousedown', function() {
+    let input = document.getElementById('session-length');
+    let value = parseInt(input.value);
+    if (value > 1) { // Changed min value to 1
+        input.value = value - 1;
+    }
+    sessionDecrementInterval = setInterval(function() {
+        value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }, 100); // Decrease every 200 ms
+});
+
+document.getElementById('session-increment').addEventListener('mouseup', clearSessionInterval);
+document.getElementById('session-increment').addEventListener('mouseleave', clearSessionInterval);
+document.getElementById('session-decrement').addEventListener('mouseup', clearSessionInterval);
+document.getElementById('session-decrement').addEventListener('mouseleave', clearSessionInterval);
+
+document.getElementById('sessions-increment').addEventListener('mousedown', function() {
+    let input = document.getElementById('total-sessions');
+    let value = parseInt(input.value);
+    if (value < 24) { // Changed max value to 24
+        input.value = value + 1;
+    }
+    totalSessionsIncrementInterval = setInterval(function() {
+        value = parseInt(input.value);
+        if (value < 24) {
+            input.value = value + 1;
+        }
+    }, 100); // Increase every 200 ms
+});
+
+document.getElementById('sessions-decrement').addEventListener('mousedown', function() {
+    let input = document.getElementById('total-sessions');
+    let value = parseInt(input.value);
+    if (value > 1) { // Changed min value to 1
+        input.value = value - 1;
+    }
+    totalSessionsDecrementInterval = setInterval(function() {
+        value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }, 100); // Decrease every 200 ms
+});
+
+document.getElementById('sessions-increment').addEventListener('mouseup', clearTotalSessionsInterval);
+document.getElementById('sessions-increment').addEventListener('mouseleave', clearTotalSessionsInterval);
+document.getElementById('sessions-decrement').addEventListener('mouseup', clearTotalSessionsInterval);
+document.getElementById('sessions-decrement').addEventListener('mouseleave', clearTotalSessionsInterval);
 
 
+
+PomodoroStartButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    var TotalSessions = document.querySelector('#total-sessions').value;
+    var SessionLenght = document.querySelector('#session-length').value;
+    PomodoroForm.style.display = 'none'; 
+
+    document.querySelector('#pomodoro-timer-container').innerHTML = `
+        
+    `
+});
