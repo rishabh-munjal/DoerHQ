@@ -5,8 +5,6 @@ var TodoFormInput = document.querySelector('#todo-input');
 var TaskList = document.querySelector('#task-list');
 
 
-
-
 // Load sound files
 const taskCompleteSound = new Audio('/assets/Sound Effects/TaskComplete.mp3');
 const taskDeleteSound = new Audio('/sounds/delete.mp3');
@@ -362,6 +360,17 @@ document.querySelector('.playlist-input-button').addEventListener('click' , func
     iframe.style.height = '100%';
 
 })
+
+const button = document.querySelector('.music-info');
+const infoDiv = document.querySelector('.info');
+
+button.addEventListener('mouseenter', () => {
+    infoDiv.style.display = 'block'; // Show the div when hovered
+});
+
+button.addEventListener('mouseleave', () => {
+    infoDiv.style.display = 'none'; // Hide the div when not hovered
+});
 
 
 

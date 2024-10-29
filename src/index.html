@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400&display=swap" rel="stylesheet">
 
   <title>DoerHQ</title>
 
@@ -18,7 +17,6 @@
       0% {
         transform: rotate(0deg);
       }
-
       100% {
         transform: rotate(360deg);
       }
@@ -30,11 +28,10 @@
   </style>
 </head>
 
-<body class=" w-full h-full m-0 overflow-hidden ">
-  <!--Background Video-->
+<body class="w-full h-full m-0 overflow-hidden">
+  <!-- Background Video -->
   <div class="w-full h-full relative">
-    <video id="background-video" autoplay loop muted playsinline
-      class="fixed top-0 left-0 w-full h-full object-cover -z-1 ">
+    <video id="background-video" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-1">
       <source src="/assets/5.mp4" type="video/mp4">
     </video>
   </div>
@@ -45,119 +42,70 @@
       <a href="#" class="text-white text-3xl font-bold font-body">dOErHq</a>
     </div>
     <div>
-      <!-- <button class="text-white text-base font-light px-3 py-2 rounded-lg bg-black bg-opacity-50 hover:bg-opacity-70" onclick="ChangeVideo()">✨</button> -->
       <span id="clock" class="text-white text-2xl font-body3 font-extralight "></span>
     </div>
   </nav>
 
   <br>
 
-  <!--Task Manager-->
-  <div
-    class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between ">
+  <!-- Task Manager -->
+  <div class="relative h-[30rem] w-[23rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between">
     <!-- Task List -->
-    <div id="task-list" class="flex-grow overflow-y-auto">
-    </div>
+    <div id="task-list" class="flex-grow overflow-y-auto"></div>
     <!-- Add Task Form -->
     <div class="mt-4">
       <form id="todo-form" class="flex items-center">
-        <input type="text" id="todo-input"
-          class="text-white flex-1 p-2  border-gray-300  mr-2 bg-transparent border-0 border-b-2 focus:outline-none"
-          placeholder="Add a task" required>
-        <button id="todo-item-add" type="submit" class=" text-white px-4 py-2 text-3xl">+</button>
+        <input type="text" id="todo-input" class="text-white flex-1 p-2 border-gray-300 mr-2 bg-transparent border-0 border-b-2 focus:outline-none" placeholder="Add a task" required>
+        <button id="todo-item-add" type="submit" class="text-white px-4 py-2 text-3xl">+</button>
       </form>
     </div>
   </div>
 
-
-  <!--PomoDoro Timer-->
-
-
-
-
-  <div id="pomodoro-timer-container"
-    class="relative h-[17rem] w-[20rem] translate-x-[25rem] -translate-y-[17rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg py-0 rounded-xl">
-
+  <!-- Pomodoro Timer -->
+  <div id="pomodoro-timer-container" class="relative h-[17rem] w-[26rem] translate-x-[25rem] -translate-y-[17rem] m-auto sm:m-0 sm:left-[5%] text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg py-0 rounded-xl">
     <form id="number-form" class="flex flex-col justify-between items-center h-full">
-
-
-      <!-- <div class="flex justify-evenly w-full"> -->
-        <!-- <div class="number-input flex flex-col justify-between place-items-center mb-4"> -->
-
-          <button type="button" id="session-increment" class="mb-2 w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z">
-              </path>
-            </svg>
-          </button>
-          <input type="number" id="session-length" name="session-length" min="25" max="180" value="25" readonly
-            class="mb-2 w-full  text-center text-2xl  h-14  bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border border-white border-opacity-20 shadow-lg ">
-          <button type="button" id="session-decrement" class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z">
-              </path>
-            </svg></button>
-          <label for="session-length" class="font-medium mb-4">Session Length (min)</label>
-        <!-- </div> -->
-
-
-        <!-- <div class="number-input flex flex-col items-center mb-4">
-
-          <button type="button" id="sessions-increment" class="mb-2 h-6 w-6"><svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z">
-              </path>
-            </svg>
-          </button></button>
-          <input type="number" id="total-sessions" name="total-sessions" min="1" max="24" value="1" readonly
-            class="mb-2 leading-loose w-full text-center text-2xl  bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border border-white border-opacity-20 shadow-lg h-14">
-          <button type="button" id="sessions-decrement" class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z">
-              </path>
-            </svg></button>
-          <label for="total-sessions" class="font-medium  mb-4"> Total Sessions</label>
-        </div> -->
-      <!-- </div> -->
-
-      <button type="submit"
-        class="pomodoro-button  font-semibold text-white bg-slate-600 bg-opacity-45 border border-white border-opacity-20 backdrop-blur-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-opacity-20 hover:scale-105">
-        Start focusing....
-      </button>
-
+      <button type="button" id="session-increment" class="m-0 w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z"></path></svg></button>
+      <input type="number" id="session-length" name="session-length" min="25" max="180" value="25" readonly class="mb-2 w-full px-0 py-0 text-center text-3xl h-14 bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-20 shadow-lg">
+      <button type="button" id="session-decrement" class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></button>
+      <label for="session-length" class="font-normal mb-4">Session Length (min)</label>
+      <button type="submit" class="pomodoro-button mb-4 font-bold text-white bg-grey-600 bg-opacity-1 border border-white border-opacity-20 backdrop-blur-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-opacity-20 hover:scale-105">Start focusing....</button>
     </form>
-
   </div>
 
-
-
-
-  <!--Music Player-->
-  <div
-    class="music-player relative h-[12rem] w-[26rem] translate-x-[25rem] -translate-y-[47rem] m-1 sm:m-0 sm:left-[5%] px-2 py-4 text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl ">
-    <!--<iframe class="w-full h-full rounded-lg"
-    src="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator&theme=0"
-    frameborder="0" allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"></iframe>-->
-
-
+  <!-- Music Player -->
+  <div class="music-player relative h-[12rem] w-[26rem] translate-x-[25rem] -translate-y-[47rem] m-1 sm:m-0 sm:left-[5%] px-2 py-4 text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl">
+    <button class="music-info float-right mt-0 w-6 h-6" onclick="alert('Copy the embed code for your Spotify playlist in compact mode only')">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z"></path></svg>
+    </button>
     <form class="music-form flex items-center mt-28">
-      <input type="text"
-        class=   "playlist-input text-white flex-1 p-2  border-gray-300  mr-2 bg-transparent border-0 border-b-2 focus:outline-none"
-        placeholder="Enter the Spotify playlist link" required>
-      <button type="submit" class=" playlist-input-button text-white px-4 py-2 text-3xl">+</button>
+      <input type="text" class="playlist-input text-white flex-1 p-2 border-gray-300 mr-2 bg-transparent border-0 border-b-2 focus:outline-none" placeholder="Enter the Spotify playlist link" required>
+      <button type="submit" class="playlist-input-button text-white px-4 py-2 text-3xl">+</button>
     </form>
   </div>
 
+  <!-- Chat Bot -->
+  <div class="relative w-[20rem] h-[30rem] translate-x-[27rem] -translate-y-[59rem] m-auto text-white bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 shadow-lg p-8 rounded-xl flex flex-col justify-between">
+        <!-- Chat Display Area -->
+        <div id="chat-display" class="flex-grow overflow-y-auto p-4 space-y-2">
+          <div class="text-sm bg-white bg-opacity-20 p-2 rounded-md max-w-xs self-start">Hello! How can I assist you?</div>
+          
+          <!-- Chat messages go here -->
+      </div>
 
+  
+      <!-- Input Area -->
+      <div class="mt-4 flex items-center">
+          <input type="text" id="user-input" placeholder="Type your message..."
+                 class="text-white flex-1 p-2 bg-transparent border-0 border-b-2 border-white focus:outline-none focus:ring-0 placeholder-gray-300">
+          <button id="send-btn" class="ml-2 px-4 py-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h12M8 6h12m-7 12h7"></path>
+              </svg>
+          </button>
+      </div>
+  </div>
 
   <script src="/src/script.js"></script>
-
 </body>
 
 </html>
