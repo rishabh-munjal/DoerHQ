@@ -7,7 +7,7 @@ Todo:-
 2. background
 3. todo memory
 4. reponsilveness
-5. scrollbar desing
+5. scrollbar desing ✅
 6. preloader
 7. deployment
 8. API ENV
