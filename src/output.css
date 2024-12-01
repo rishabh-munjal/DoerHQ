@@ -1033,6 +1033,9 @@ video {
   --tw-placeholder-opacity: 1;
   color: rgb(209 213 219 / var(--tw-placeholder-opacity));
 }
+.bg-black{
+  background-color:black
+}
 
 .placeholder-gray-300::placeholder{
   --tw-placeholder-opacity: 1;
