@@ -1,9 +1,12 @@
 var question = document.querySelector('.gemini-input');
 var sendButton = document.querySelector('#send-btn');
 var chatboxContainer = document.querySelector('#chat-display');
+var form = document.querySelector('#chat-form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from submitting (reloading the page)
+});
 
-const API = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDNT77nL8WZhzeaMvLWTuWfQ-D9auG70I0';
-
+const API = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCKH5-IKh2oJ-ZqgE0v3rS_3pf_xHnr9BE';
 sendButton.addEventListener('click', function(e) {
     e.preventDefault();
     
