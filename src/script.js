@@ -6,7 +6,7 @@ var TodoFormInput = document.querySelector('#todo-input');
 var TaskList = document.querySelector('#task-list');
 
 // Load sound files
-const taskCompleteSound = new Audio('../assets/Sound Effects/TaskComplete.mp3');
+const taskCompleteSound = new Audio('./assets/Sound Effects/TaskComplete.mp3');
 // const taskDeleteSound = new Audio('/sounds/delete.mp3');
 
 // Function to save tasks to local storage
@@ -93,7 +93,7 @@ TodoForm.addEventListener('submit', function(e) {
 function ChangeVideo() {
     const video = document.getElementById('background-video');
     const source = video.querySelector('source');
-    const newVideoSource = `../assets/${video_itr[i]}.mp4`;
+    const newVideoSource = `./assets/${video_itr[i]}.mp4`;
     source.setAttribute('src', newVideoSource);
     video.load();
     i++;
