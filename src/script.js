@@ -69,7 +69,7 @@ function addTask(text, completed = false) {
     // Handle task deletion
     let taskDeleteButton = task.querySelector('.task-delete-button');
     taskDeleteButton.addEventListener('click', function() {
-        taskDeleteSound.play();
+        // taskDeleteSound.play();
         task.remove();
         saveData();
     });
